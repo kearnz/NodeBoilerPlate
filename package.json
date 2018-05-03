@@ -7,6 +7,7 @@
   "author": "kearnz <josephkearney14@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint '**/*.js' --quiet",
     "format": "prettier --write '**/*.js'"
   },
   "dependencies": {
