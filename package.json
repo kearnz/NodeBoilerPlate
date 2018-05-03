@@ -5,5 +5,14 @@
   "main": "app.js",
   "repository": "https://github.com/kearnz/NodeBoilerPlate.git",
   "author": "kearnz <josephkearney14@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "pg": "^7.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
 }
