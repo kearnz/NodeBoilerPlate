@@ -24,7 +24,7 @@ app.use(
   })
 );
 
-//demonstrate ability to use postgres with node
+// demonstrate ability to use postgres with node
 (async () => {
   await client.connect();
   const res = await client.query('SELECT $1::text as message', ['Hello World from Postgres!']);
@@ -38,5 +38,5 @@ app.get('/', (req, res) => {
   res.end(`hello there, you have ${req.session.views} views`);
 });
 
-//console.log yields error b/c of linter
+// console.log yields error b/c of linter
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
