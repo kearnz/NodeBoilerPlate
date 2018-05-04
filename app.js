@@ -8,7 +8,7 @@ const app = express(),
 	client = new Client();
 
 // an example of middleware function
-var myLogger = (req, res, next) => {
+const myLogger = (req, res, next) => {
 	console.log(Date.now());
 	next();
 };
@@ -27,7 +27,9 @@ app.use(
 // demonstrate ability to use postgres with node
 (async () => {
 	await client.connect();
-	const res = await client.query("SELECT $1::text as message", ["Hello World from Postgres!"]);
+	const res = await client.query("SELECT $1::text as message", [
+		"Hello World from Postgres!"
+	]);
 	console.log(res.rows[0].message); // Hello World ffrom Postgres!
 	await client.end();
 })();
