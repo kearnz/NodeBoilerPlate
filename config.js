@@ -1,12 +1,12 @@
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 
 // load the .env file
 dotenv.config();
 
-var fromEnv = vName => process.env[vName];
+const fromEnv = vName => process.env[vName];
 
-var config = {
-  port: fromEnv('PORT') || 3000
+const config = {
+	port: fromEnv("PORT") || 3000
 };
 
 module.exports = config;
