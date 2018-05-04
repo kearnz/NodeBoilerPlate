@@ -5,11 +5,12 @@ const cookieSession = require("cookie-session"),
 
 const app = express(),
 	port = config.port,
+	host = config.host,
 	client = new Client();
 
 // an example of middleware function
 const myLogger = (req, res, next) => {
-	console.log(Date.now());
+	console.log(new Date().toISOString());
 	next();
 };
 
@@ -41,4 +42,6 @@ app.get("/", (req, res) => {
 });
 
 // console.log yields error b/c of linter
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, host, () =>
+	console.log(`Example app listening on port ${port}!`)
+);
