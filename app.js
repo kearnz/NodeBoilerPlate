@@ -1,7 +1,8 @@
-const cookieSession = require("cookie-session"),
-	express = require("express"),
+const express = require("express"),
+	cookieSession = require("cookie-session"),
 	{ Client } = require("pg"),
-	config = require("./config");
+	config = require("./config"),
+	indexRoute = require("./routes/index");
 
 const app = express(),
 	port = config.port,
@@ -9,21 +10,25 @@ const app = express(),
 	client = new Client();
 
 // an example of middleware function
-const myLogger = (req, res, next) => {
+const myDateLogger = (req, res, next) => {
 	console.log(new Date().toISOString());
 	next();
 };
 
-// using middleware
-app.use(myLogger);
+// using middleware for console log (demo only)
+app.use(myDateLogger);
 
 // example using configured middleware
+// note needs to come before indexRoute to pickup session views
 app.use(
 	cookieSession({
 		name: "session",
 		keys: ["key1", "key2"]
 	})
 );
+
+// modularizing routes
+app.use("/", indexRoute);
 
 // demonstrate ability to use postgres with node
 (async () => {
@@ -35,13 +40,7 @@ app.use(
 	await client.end();
 })();
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get("/", (req, res) => {
-	req.session.views = (req.session.views || 0) + 1;
-	res.end(`hello there, you have ${req.session.views} views`);
-});
-
 // console.log yields error b/c of linter
 app.listen(port, host, () =>
-	console.log(`Example app listening on port ${port}!`)
+	console.log(`Example app listening on ${host}:${port}!`)
 );
