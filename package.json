@@ -8,10 +8,14 @@
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
-    "precommit":"lint-staged"
+    "precommit": "lint-staged"
   },
-  "lint-staged":{
-    "**/*.js": ["prettier --write","eslint --quiet","git add"]
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --write",
+      "eslint --quiet",
+      "git add"
+    ]
   },
   "dependencies": {
     "cookie-session": "^2.0.0-beta.3",
