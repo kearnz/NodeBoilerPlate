@@ -1,3 +1,4 @@
+// dependencies we require
 const express = require("express"),
 	cookieSession = require("cookie-session"),
 	{ Client } = require("pg"),
