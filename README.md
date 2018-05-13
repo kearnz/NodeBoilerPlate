@@ -1,3 +1,3 @@
-# Node Boiler Plate
+# Node Boilerplate
 
 Super simple setup for a node application!

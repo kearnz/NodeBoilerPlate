@@ -1,9 +1,9 @@
 {
-  "name": "node-boiler-plate",
+  "name": "node-boilerplate",
   "version": "1.0.0",
   "description": "Super simple app structure for node!",
   "main": "app.js",
-  "repository": "https://github.com/kearnz/NodeBoilerPlate.git",
+  "repository": "https://github.com/kearnz/node-boilerplate.git",
   "author": "kearnz <josephkearney14@gmail.com>",
   "license": "MIT",
   "scripts": {
