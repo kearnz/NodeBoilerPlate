@@ -37,7 +37,7 @@ app.use("/", indexRoute);
 	const res = await client.query("SELECT $1::text as message", [
 		"Hello World from Postgres!"
 	]);
-	console.log(res.rows[0].message); // Hello World ffrom Postgres!
+	console.log(res.rows[0].message); // Hello World from Postgres!
 	await client.end();
 })();
 
