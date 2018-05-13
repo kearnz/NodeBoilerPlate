@@ -1,14 +1,13 @@
 // dependencies we require
 const express = require("express"),
 	cookieSession = require("cookie-session"),
-	{ Client } = require("pg"),
 	config = require("./config"),
-	indexRoute = require("./routes/index");
+	indexRoute = require("./routes/index"),
+	psqlRoute = require("./routes/psql");
 
 const app = express(),
 	port = config.port,
-	host = config.host,
-	client = new Client();
+	host = config.host;
 
 // an example of middleware function
 const myDateLogger = (req, res, next) => {
@@ -30,16 +29,7 @@ app.use(
 
 // modularizing routes
 app.use("/", indexRoute);
-
-// demonstrate ability to use postgres with node
-(async () => {
-	await client.connect();
-	const res = await client.query("SELECT $1::text as message", [
-		"Hello World from Postgres!"
-	]);
-	console.log(res.rows[0].message); // Hello World from Postgres!
-	await client.end();
-})();
+app.use("/psql", psqlRoute);
 
 // console.log yields error b/c of linter
 app.listen(port, host, () =>
