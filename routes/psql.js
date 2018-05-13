@@ -15,7 +15,6 @@ let postgresHello = async () => {
 		"Hello World from Postgres!"
 	]);
 	await client.end();
-	console.log(res.rows[0].message);
 	return res.rows[0].message;
 };
 
