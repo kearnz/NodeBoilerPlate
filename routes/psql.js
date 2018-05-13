@@ -15,11 +15,14 @@ let postgresHello = async () => {
 		"Hello World from Postgres!"
 	]);
 	await client.end();
+	console.log(res.rows[0].message);
 	return res.rows[0].message;
 };
 
-router.get("/", (req, res) => {
-	res.end(postgresHello());
+// note that we have to use async await here too
+// given that we created an async message
+router.get("/", async (req, res) => {
+	res.end(await postgresHello());
 });
 
 module.exports = router;
