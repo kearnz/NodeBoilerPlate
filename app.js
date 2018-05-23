@@ -2,8 +2,7 @@
 const express = require("express"),
 	cookieSession = require("cookie-session"),
 	config = require("./config"),
-	indexRoute = require("./routes/index"),
-	psqlRoute = require("./routes/psql");
+	indexRoute = require("./routes/index");
 
 const app = express(),
 	port = config.port,
@@ -29,7 +28,6 @@ app.use(
 
 // modularizing routes
 app.use("/", indexRoute);
-app.use("/psql", psqlRoute);
 
 // console.log yields error b/c of linter
 app.listen(port, host, () =>
