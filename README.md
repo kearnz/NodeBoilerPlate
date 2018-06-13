@@ -4,7 +4,7 @@ Super simple setup and convenient setup for a node application using express!
 
 ## Main Dependencies
 
-* dotenv ^5.0.1"
+* dotenv ^5.0.1
 * express ^4.16.3
 
 ## Dev Dependencies
