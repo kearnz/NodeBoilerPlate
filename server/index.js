@@ -27,9 +27,9 @@ const setup = server => {
 
 	// modularizing routes
 	server.use("/", indexRoute);
-
 	return server;
 };
+
 // console.log yields error b/c of linter
 const start = (server, config) => {
 	const port = config.port,
