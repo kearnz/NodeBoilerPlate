@@ -1,7 +1,7 @@
 // dependencies we require
 const express = require("express"),
 	cookieSession = require("cookie-session"),
-	config = require("./config"),
+	config = require("./config/config"),
 	indexRoute = require("./routes/index");
 
 const app = express(),
