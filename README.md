@@ -6,6 +6,7 @@ Super simple setup and convenient setup for a node application using express!
 
 * dotenv ^5.0.1
 * express ^4.16.3
+* body-parser ^1.18.3
 
 ## Dev Dependencies
 
@@ -22,7 +23,7 @@ Super simple setup and convenient setup for a node application using express!
 
 ## About
 
-Anytime I've learned a new language, I've put off proper package structure, telling myself I'll figure out how to organize my code later. I've tried to take a different approach with node. This boilerplate is an attempt to set forth a structure that makes sense to me and that I like to use. It is in no way the "right" way to do things, and elements may in fact be the wrong way to go, so any advice is welcome! I'm planning to evolve this repo anytime I learn new techniques for building projects that utilize Node.js.
+Anytime I've learned a new language, I've put off proper package structure, telling myself I'll figure out how to organize my code later. I've tried to take a different approach with node. This boilerplate is an attempt to set forth a structure that makes sense to me and that I like to use. It is in no way the "right" way to do things, and elements may in fact be the wrong way to go, so any advice is welcome! I'm planning to add to this repo anytime I learn new techniques for building projects that utilize Node.js.
 
 ## Features I Like
 
