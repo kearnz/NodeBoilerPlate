@@ -30,7 +30,6 @@ const setup = server => {
 	return server;
 };
 
-// console.log yields error b/c of linter
 const start = (server, config) => {
 	const port = config.port,
 		host = config.host;
